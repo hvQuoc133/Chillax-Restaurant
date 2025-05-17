@@ -1,0 +1,147 @@
+/* Header css*/
+/* ==== Navbar ==== */
+.navbar {
+    background-color: var(--bg-overlay-color);
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link {
+
+    &.active,
+    &.show {
+        color: var(--primary-color) !important;
+    }
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav {
+    width: auto;
+    margin: 0 auto;
+}
+
+.navbar-nav .nav-item {
+    width: 120px;
+    text-align: center;
+}
+
+/* Navbar scroll */
+#mainNavbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar scrolled */
+#mainNavbar.scrolled {
+    background-color: rgba(47, 95, 70, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+}
+
+.navbar-toggler {
+    height: 60px;
+}
+
+.navbar-toggler.rotate {
+    transition: transform 0.3s ease;
+    transform: rotate(-90deg);
+    /* bạn có thể đổi thành 180deg nếu muốn */
+}
+
+/* Hover underline animation */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-item .d-flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.d-flex img {
+    cursor: pointer;
+    width: 35px;
+    height: 25px;
+}
+
+/* Responsive header */
+@media (max-width: 991.98px) {
+    .navbar {
+        padding: 10px 15px;
+        display: flex;
+    }
+
+    .navbar-brand img {
+        width: 70px;
+    }
+
+    .navbar-toggler {
+        flex-shrink: 0;
+        z-index: 1051;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-overlay-color);
+        border-radius: 0 0 10px 10px;
+        padding: 15px;
+        z-index: 1050;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar-nav .nav-item {
+        width: auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-item .d-flex {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .d-flex img {
+        width: 30px;
+        height: 20px;
+    }
+}
