@@ -1,0 +1,172 @@
+:root {
+    --bg-overlay-color: rgba(47, 95, 70, 1);
+    --primary-color: #F1C40F;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f6f8;
+    --background-main: rgba(243, 243, 235, 255);
+    --text-color: #333;
+    --hover-color: #3498db;
+    --font-size-base: 20px;
+    --font-title: 35px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==== General configuration ==== */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+main {
+    background-color: var(--background-main);
+}
+
+.menu-container {
+    width: 80%;
+    margin: 0 auto;
+    height: 3000px;
+    padding-top: 170px;
+}
+
+.menu-container h2 {
+    padding: 0 0 30px 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.menu-container hr {
+    width: 62%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+/* Main menu content */
+.menu-content {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--background-main);
+    text-align: center;
+}
+
+.menu-content .title-content {
+    padding: 100px 0 50px 0;
+    font-family: var(--font-family);
+    color: black;
+}
+
+.menu-content hr {
+    width: 62%;
+    margin: 0 auto;
+}
+
+.menu-content h2 {
+    padding: 50px 0 30px 0;
+    color: var(--primary-color);
+}
+
+.menu-view {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 30px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    min-height: 430px;
+    height: 430px;
+    overflow: hidden;
+}
+
+.menu-img img {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.menu-img img:hover {
+    filter: brightness(1.2) saturate(1.2);
+}
+
+.menu-info h2 {
+    font-size: 20px;
+    margin: 20px 0 5px;
+    min-height: 45px;
+    height: 45px;
+    padding: 0 0 20px 0;
+    color: var(--bg-overlay-color);
+}
+
+/* Hidden overlay */
+.menu-info h6.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    z-index: 2;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay up */
+.menu-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-info b {
+    font-size: 18px;
+    color: #000;
+}
+
+/* Scroll to top */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bg-overlay-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s ease;
+    width: 60px;
+    height: 60px;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: var(--primary-color);
+}
