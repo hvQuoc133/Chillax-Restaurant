@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  fetch('../header.html')
+  fetch('/Chillax-Restaurant/header.html')
     .then(res => res.text())
     .then(html => {
       container.innerHTML = html;
@@ -178,7 +178,7 @@ fetch('lang/en.json')
       return;
     }
   
-    fetch('../header.html') 
+    fetch('/Chillax-Restaurant/header.html') 
       .then(res => res.text())
       .then(html => {
         container.innerHTML = html;
