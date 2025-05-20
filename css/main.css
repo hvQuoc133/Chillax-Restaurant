@@ -421,11 +421,56 @@ body {
     transition: opacity 0.3s ease;
     width: 60px;
     height: 60px;
+    z-index: 999;
 }
 
 .scroll-to-top-btn:hover {
     background-color: var(--primary-color);
 }
+
+/* Floating menu */
+.floating-wrapper {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Btn menu */
+.floating-menu {
+    background-color: var(--bg-overlay-color);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* List menu */
+.floating-list {
+    position: absolute;
+    top: 0;
+    left: 70px; 
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+/* Active */
+.floating-list.active {
+    display: flex;
+}
+
+
 
 /* Footer content */
 

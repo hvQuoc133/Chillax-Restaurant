@@ -21,6 +21,23 @@ body {
     line-height: 1.6;
 }
 
+
+.notification {
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--bg-overlay-color);
+    color: var(--primary-color);
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-size: 18px;
+    
+  }
+
 main {
     background-color: var(--background-main);
 }
@@ -28,7 +45,7 @@ main {
 .menu-container {
     width: 80%;
     margin: 0 auto;
-    height: 3000px;
+    height: auto;
     padding-top: 170px;
 }
 
@@ -36,6 +53,7 @@ main {
     padding: 0 0 30px 0;
     color: var(--primary-color);
     text-align: center;
+    font-weight: bold;
 }
 
 .menu-container hr {
@@ -69,6 +87,7 @@ main {
 .menu-content h2 {
     padding: 50px 0 30px 0;
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .menu-view {
@@ -114,6 +133,7 @@ main {
     height: 45px;
     padding: 0 0 20px 0;
     color: var(--bg-overlay-color);
+    font-weight: bold;
 }
 
 /* Hidden overlay */
@@ -169,4 +189,75 @@ main {
 
 .scroll-to-top-btn:hover {
     background-color: var(--primary-color);
+}
+
+/* Parallax content - 1 */
+.parallax-section-1 {
+    margin-top: 50px;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    width: 100% !important;
+}
+
+.parallax-bg-1 {
+    background-image: url('../images/bg-banner/bg-index.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: brightness(15%);
+}
+
+.parallax-content-1 {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+}
+
+.parallax-content-1 h1 {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.2);
+    padding-top: 50px;
+}
+
+.parallax-combo {
+    position: relative;
+    display: flex;
+    height: auto;
+    width: auto;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.parallax-combo .combo-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+.combo-1 img {
+    width: 150px;
+    height: 150px;
+}
+
+.combo-1 p {
+    font-family: var(--font-family);
+    font-size: 20px;
+    color: var(--primary-color);
 }

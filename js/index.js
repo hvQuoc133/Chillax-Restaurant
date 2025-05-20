@@ -85,10 +85,20 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 
 /* Change lang placeholder */
 function changeLang(lang) {
-    const input = document.getElementById("myInput");
-    if (lang === 'vi') {
-      input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
-    } else if (lang === 'en') {
-      input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
-    }
+  const input = document.getElementById("myInput");
+  if (lang === 'vi') {
+    input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
+  } else if (lang === 'en') {
+    input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
   }
+}
+
+/* Floating menu */
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.floating-menu');
+  const menuList = document.querySelector('.floating-list');
+
+  menuBtn.addEventListener('click', () => {
+    menuList.classList.toggle('active');
+  });
+});
