@@ -93,12 +93,62 @@ function changeLang(lang) {
   }
 }
 
+
 /* Floating menu */
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.floating-menu');
   const menuList = document.querySelector('.floating-list');
+  const menuLinks = document.querySelectorAll('.floating-list a');
 
+  // Toggle menu + icon xoay
   menuBtn.addEventListener('click', () => {
     menuList.classList.toggle('active');
+    menuBtn.classList.toggle('rotate');
   });
+
+  // Khi click vào mục, ẩn menu và reset icon
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuList.classList.remove('active');
+      menuBtn.classList.remove('rotate');
+    });
+  });
+
+  // Scroll Spy chính xác
+  const sections = Array.from(menuLinks).map(link => {
+    const id = link.getAttribute('href').substring(1);
+    return document.getElementById(id);
+  });
+
+  const activateLink = () => {
+    let currentSectionId = null;
+    const scrollPosition = window.scrollY + 120;
+
+    // Duyệt từ dưới lên để bắt đúng section đang hiển thị
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      if (section && scrollPosition >= section.offsetTop) {
+        currentSectionId = section.id;
+        break;
+      }
+    }
+
+    // Nếu không ở trong bất kỳ section nào => gỡ active hết
+    if (!currentSectionId) {
+      menuLinks.forEach(link => link.classList.remove('active'));
+      return;
+    }
+
+    // Gán/tắt class active tương ứng
+    menuLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', activateLink);
+  activateLink(); // Gọi 1 lần khi load
 });

@@ -119,8 +119,7 @@
             </div>
         </div>
         <div class="content-bg">
-            <button type="button" aria-label="View menu" onclick="location.href='menu.html'" data-i18n="viewMenu">View
-                Menu</button>
+            <button type="button" aria-label="View menu" onclick="location.href='menu.html'" data-i18n="viewMenu">Xem Thực Đơn</button>
         </div>
     </div>
     <!-- Banner end -->
@@ -128,12 +127,13 @@
     <main>
         <!-- Menu content -->
         <div class="menu-content">
-            <h2 class="title-content" data-i18n="title-content" data-aos="fade-up" data-aos-duration="1000">MENU HÔM NAY
+            <h2 class="title-content" data-i18n="title-content" data-aos="fade-up" data-aos-duration="1000">THỰC ĐƠN HÔM NAY
             </h2>
             <!-- Menu drink -->
             <hr>
+            <section id="drink">
             <h2 data-i18n="title-drink" data-aos="fade-up" data-aos-duration="1000">ĐỒ UỐNG NỔI BẬT</h2>
-            <div class="menu-view" id="drink">
+            <div class="menu-view">
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item">
                     <div class="menu-img">
                         <img loading="lazy" src="images/menu/drink1.JPG" alt="Cà Phê Hoả Ngục" class="zoom-image">
@@ -178,6 +178,7 @@
                     </div>
                 </div>
             </div>
+        </section>
 
             <div class="btn-viewmore">
                 <button type="button" data-i18n="btn-viewMore" data-aos="fade-down" data-aos-duration="1000">Xem
@@ -186,7 +187,7 @@
 
             <!-- Menu food -->
             <hr>
-            <h2 data-i18n="title-dishes">ĐỒ ĂN NỔI BẬT</h2>
+            <h2 id="food" data-i18n="title-dishes">ĐỒ ĂN NỔI BẬT</h2>
             <div class="menu-view">
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item">
                     <div class="menu-img">
@@ -239,7 +240,7 @@
         <!-- End Menu Content -->
 
         <!-- Restaurant Image Content -->
-        <h2 class="r-title-content" data-i18n="r-title-content" data-aos="fade-up" data-aos-duration="1000">ẢNH ĐÁNG NHỚ
+        <h2 id="imgIndex" class="r-title-content" data-i18n="r-title-content" data-aos="fade-up" data-aos-duration="1000">ẢNH ĐÁNG NHỚ
             TẠI CHILLAX</h2>
         <div class="r-img-content">
             <img data-aos="fade-up" data-aos-duration="1000" loading="lazy" src="images/scenery/checkin1.JPG"
@@ -254,7 +255,7 @@
         <!-- End Restaurant Image Content -->
 
         <!-- Set Table Content -->
-        <div class="settable-container">
+        <div id="settable" class="settable-container">
             <div data-aos="fade-up" data-aos-duration="1000" class="settable-text">
                 <h2 data-i18n="title-settable">ĐẶT BÀN TẠI CHILLAX</h2>
                 <h5 data-i18n="text-settable">Quý khách vui lòng đặt bàn trước để có trải nghiệm thưởng thức ẩm thực tốt
@@ -346,9 +347,11 @@
             <i class="fas fa-bars"></i>
         </button>
         <ul class="floating-list">
-            <li><a href="#drink">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
+            <li><a href="#drink">Đồ Uống</a></li>
+            <li><a href="#food">Đồ Ăn</a></li>
+            <li><a href="#imgIndex">Ảnh đẹp</a></li>
+            <li><a href="#settable">Đặt bàn</a></li>
+            <li><a href="#footer">Liên Hệ</a></li>
         </ul>
     </div>
 

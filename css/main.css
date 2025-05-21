@@ -112,7 +112,7 @@ body {
 /* Button-bg */
 .background-img .content-bg button {
     height: 50px;
-    width: 150px;
+    width: 170px;
     font-size: var(--font-size-base);
     background-color: var(--bg-overlay-color);
     color: white;
@@ -431,8 +431,8 @@ body {
 /* Floating menu */
 .floating-wrapper {
     position: fixed;
-    bottom: 80px;
-    left: 20px;
+    bottom: 13%;
+    right: 20px;
     z-index: 1000;
 }
 
@@ -454,8 +454,8 @@ body {
 /* List menu */
 .floating-list {
     position: absolute;
-    top: 0;
-    left: 70px; 
+    top: 1px;
+    right: 70px; 
     display: none;
     flex-direction: column;
     background-color: white;
@@ -463,6 +463,22 @@ body {
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     gap: 10px;
+    list-style: none; /* Bỏ dấu chấm */
+    margin: 0;         /* Xóa khoảng trắng mặc định */
+    width: 100px;
+    font-size: 14px;
+}
+
+.floating-list li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.floating-list li a:hover {
+    background-color: var(--primary-color);
 }
 
 /* Active */
@@ -470,6 +486,30 @@ body {
     display: flex;
 }
 
+.floating-list li a.active {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.floating-menu.rotate i {
+    transform: rotate(90deg); /* hoặc 180deg tùy bạn muốn xoay bao nhiêu */
+}
+
+/* Ẩn floating menu trên màn hình lớn (desktop) */
+.floating-wrapper {
+    display: none;
+  }
+  
+  /* Hiện floating menu khi màn hình nhỏ hơn hoặc bằng 768px */
+  @media (max-width: 768px) {
+    .floating-wrapper {
+      display: block;
+    }
+  }
 
 
 /* Footer content */
@@ -558,13 +598,19 @@ body {
 
     /* Khi màn hình nhỏ hơn 480px */
     .background-img {
-        height: 70vh;
-        /* Giảm chiều cao của background */
+        width: auto;
+        height: 60vh;
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;   
     }
 
     .carousel-caption {
         bottom: 520px;
         /* Dịch lên trên hơn */
+    }
+    .carousel-control-prev, .carousel-control-next{
+        bottom: 300px;
     }
 
     .background-img .content-bg {

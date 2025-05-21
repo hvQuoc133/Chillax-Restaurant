@@ -1,4 +1,4 @@
-// Dropdown nav item
+// Init Dropdown Touch
 function initDropdownTouch() {
   document.querySelectorAll('.nav-item.dropdown').forEach(function (el) {
     el.addEventListener('touchstart', function () {
@@ -10,20 +10,117 @@ function initDropdownTouch() {
   });
 }
 
+// Mobile hover nav item
 function initMobileHoverNav() {
   const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
   dropdowns.forEach(drop => {
     drop.addEventListener('click', function (e) {
-      e.stopPropagation();
-      drop.classList.toggle('show');
+      e.stopPropagation(); // Ngừng sự kiện b bubbling
+      const menu = drop.querySelector('.dropdown-menu');
+
+      if (menu) {
+        const isOpen = menu.classList.contains('show');
+        // Nếu dropdown đã mở, đóng lại, nếu không mở thì mở
+        if (isOpen) {
+          menu.classList.remove('show');
+        } else {
+          menu.classList.add('show');
+        }
+      }
     });
   });
 
+  // Đảm bảo rằng mọi dropdown sẽ đóng lại khi click ra ngoài
   document.addEventListener('click', function () {
-    dropdowns.forEach(drop => drop.classList.remove('show'));
+    dropdowns.forEach(drop => {
+      const menu = drop.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.classList.remove('show');
+      }
+    });
   });
 }
+
+// Dropdown nav item
+function initSubmenuDropdown() {
+  const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+
+  submenuToggles.forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+          e.preventDefault(); // Ngừng hành động mặc định của liên kết
+          e.stopPropagation(); // Ngừng sự kiện lan tỏa
+
+          const submenu = this.nextElementSibling; // Lấy menu con
+
+          // Đảm bảo rằng không có menu con nào khác đang mở
+          document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+              if (menu !== submenu) {
+                  menu.classList.remove('show'); // Đóng tất cả các menu con khác
+              }
+          });
+
+          // Toggle hiển thị menu con đã click
+          submenu.classList.toggle('show');
+      });
+  });
+
+  // Đóng tất cả submenu khi click ra ngoài
+  document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown-submenu')) {
+          document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+              menu.classList.remove('show');
+          });
+      }
+  });
+}
+
+// Mobile dropdown toggle
+function initMobileDropdown() {
+  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+  dropdowns.forEach(drop => {
+    drop.addEventListener('click', function (e) {
+      e.stopPropagation(); // Ngừng sự kiện b bubbling
+      const menu = drop.querySelector('.dropdown-menu');
+
+      if (menu) {
+        const isOpen = menu.classList.contains('show');
+        // Nếu dropdown đã mở, đóng lại, nếu không mở thì mở
+        if (isOpen) {
+          menu.classList.remove('show');
+        } else {
+          menu.classList.add('show');
+        }
+      }
+    });
+  });
+
+  // Dropdown submenu toggle for mobile
+  const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault(); // Ngừng hành động mặc định của liên kết
+      e.stopPropagation(); // Ngừng sự kiện lan tỏa
+
+      const submenu = this.nextElementSibling; // Lấy menu con
+
+      // Toggle hiển thị menu con đã click
+      submenu.classList.toggle('show');
+    });
+  });
+
+  // Đảm bảo rằng mọi dropdown sẽ đóng lại khi click ra ngoài
+  document.addEventListener('click', function () {
+    dropdowns.forEach(drop => {
+      const menu = drop.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+}
+
 
 // Toggle Rotate
 function initNavbarToggleRotate() {
@@ -108,14 +205,14 @@ function loadLanguage(lang) {
 
 // Call all function
 function initHeaderJS() {
+  initSubmenuDropdown(); // Xử lý dropdown submenu
+  initMobileDropdown();  // Xử lý dropdown cho mobile
   initDropdownTouch();
-  initMobileHoverNav();
   initNavbarToggleRotate();
   initNavbarScroll();
   initLanguageSwitcher();
   initScrollToTopBtn();
 }
-
 // Zoom images
 function openModal(src) {
   const modal = document.getElementById("imageModal");
@@ -131,17 +228,35 @@ function closeModal() {
 // Load header DOM 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('header');
-
+  
   if (!container) {
     console.error("Không tìm thấy phần tử #header trong DOM.");
     return;
   }
-
+  
   fetch('header.html')
     .then(res => res.text())
     .then(html => {
       container.innerHTML = html;
-      initHeaderJS();
+      initHeaderJS();       // Call functions 
+      setActiveNavItem();   // active nav item
+
+      // Gắn sự kiện đóng dropdown khi chọn
+      document.querySelectorAll('.dropdown-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          const dropdown = link.closest('.dropdown');
+          if (dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+              let instance = bootstrap.Dropdown.getInstance(toggle);
+              if (!instance) {
+                instance = new bootstrap.Dropdown(toggle);
+              }
+              instance.hide(); // Đóng dropdown
+            }
+          }
+        });
+      });
     })
     .catch(err => console.error("Lỗi khi tải header:", err));
 });
@@ -187,3 +302,4 @@ fetch('lang/en.json')
       })
       .catch(err => console.error("Lỗi khi tải header:", err));
   });
+  
