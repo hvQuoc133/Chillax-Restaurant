@@ -1,63 +1,69 @@
-// Init Dropdown Touch
-function initDropdownTouch() {
-  document.querySelectorAll('.nav-item.dropdown').forEach(function (el) {
-    el.addEventListener('touchstart', function () {
-      let menu = el.querySelector('.dropdown-menu');
-      if (menu) {
-        menu.classList.toggle('show');
+// ===== Chillax Restaurant Header JS =====
+
+// --- Navbar Submenu & Mobile Functionality ---
+function initMobileSubmenuBehavior() {
+  // 1. Toggle submenu (Châu Âu, Châu Á) trên mobile
+  document.querySelectorAll('.dropdown-submenu > a').forEach(link => {
+    // Xóa sự kiện cũ trước khi gắn mới (nếu header fetch nhiều lần)
+    link.replaceWith(link.cloneNode(true));
+  });
+  document.querySelectorAll('.dropdown-submenu > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Đóng tất cả các submenu khác
+        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+          if (menu !== this.nextElementSibling) menu.classList.remove('show');
+        });
+        // Toggle submenu hiện/ẩn
+        const submenu = this.nextElementSibling;
+        if (submenu) submenu.classList.toggle('show');
       }
     });
   });
-}
 
-// Mobile hover nav item
-function initMobileHoverNav() {
-  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-  dropdowns.forEach(drop => {
-    drop.addEventListener('click', function (e) {
-      e.stopPropagation();
-      drop.classList.toggle('show');
-    });
-  });
-
-  document.addEventListener('click', function () {
-    dropdowns.forEach(drop => drop.classList.remove('show'));
-  });
-}
-
-// Dropdown nav item
-function initSubmenuDropdown() {
-  const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
-
-  submenuToggles.forEach(toggle => {
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const submenu = this.nextElementSibling;
-
-      document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-        if (menu !== submenu) {
-          menu.classList.remove('show');
-        }
-      });
-
-      submenu.classList.toggle('show');
-    });
-  });
-
-  // Close submenu when clicking outside
+  // 2. Đóng submenu khi click ra ngoài trên mobile
   document.addEventListener('click', function (e) {
-    if (!e.target.closest('.dropdown-submenu')) {
+    if (window.innerWidth < 992 && !e.target.closest('.dropdown-submenu')) {
       document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
         menu.classList.remove('show');
       });
     }
   });
+
+  // 3. Khi click vào item submenu (món ăn...), đóng luôn navbar-collapse rồi chuyển trang
+  document.querySelectorAll('.dropdown-submenu .dropdown-menu .dropdown-item').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+
+        // Đóng tất cả submenu
+        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
+
+        // Đóng navbar-collapse (menu mobile)
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            const collapseInstance = bootstrap.Collapse.getOrCreateInstance(navbarCollapse, {toggle: false});
+            collapseInstance.hide();
+          } else {
+            navbarCollapse.classList.remove('show');
+          }
+        }
+
+        // Chuyển trang sau 200ms cho mượt
+        setTimeout(() => {
+          window.location.href = this.getAttribute('href');
+        }, 200);
+      }
+    });
+  });
 }
 
-// Toggle Rotate
+// --- Navbar Toggle Rotate ---
 function initNavbarToggleRotate() {
   const toggler = document.querySelector(".navbar-toggler");
   const target = document.querySelector("#navbarSupportedContent");
@@ -77,7 +83,7 @@ function initNavbarToggleRotate() {
   }
 }
 
-// Navbar scroll
+// --- Navbar Scroll Shadow ---
 function initNavbarScroll() {
   window.addEventListener("scroll", function () {
     const navbar = document.getElementById("mainNavbar");
@@ -91,10 +97,9 @@ function initNavbarScroll() {
   });
 }
 
-// Btn on top
+// --- Scroll To Top Button ---
 function initScrollToTopBtn() {
   const mybutton = document.getElementById("scrollToTopBtn");
-
   if (!mybutton) return;
 
   window.addEventListener('scroll', () => {
@@ -111,7 +116,7 @@ function initScrollToTopBtn() {
   });
 }
 
-// Change language
+// --- Language Switcher ---
 function initLanguageSwitcher() {
   const savedLang = localStorage.getItem('language') || 'vi';
   loadLanguage(savedLang);
@@ -138,35 +143,42 @@ function loadLanguage(lang) {
     });
 }
 
-// Call all function
-function initHeaderJS() {
-  initSubmenuDropdown();
-  initDropdownTouch();
-  initMobileHoverNav();
-  initNavbarToggleRotate();
-  initNavbarScroll();
-  initLanguageSwitcher();
-  initScrollToTopBtn();
-  initSubmenuLinkClickCloseMobileMenu();  // cần thiết
-  handleCloseMobileMenuAfterLoad();
+// --- Set Active Nav Item ---
+function setActiveNavItem() {
+  const currentPage = window.location.pathname.split('/').pop(); // select current page
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 }
 
-// Zoom images
+// --- Zoom Images Modal ---
 function openModal(src) {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   modal.style.display = "flex";
   modalImg.src = src;
 }
-
 function closeModal() {
   document.getElementById("imageModal").style.display = "none";
 }
 
-// Load header DOM 
+// --- Init All Header JS ---
+function initHeaderJS() {
+  initMobileSubmenuBehavior();   // Xử lý submenu mobile (đa cấp, đóng menu khi chọn)
+  initNavbarToggleRotate();
+  initNavbarScroll();
+  initLanguageSwitcher();
+  initScrollToTopBtn();
+}
+
+// --- Load Header DOM (fetch) ---
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('header');
-
   if (!container) {
     console.error("Không tìm thấy phần tử #header trong DOM.");
     return;
@@ -177,97 +189,18 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       container.innerHTML = html;
       initHeaderJS();
+      setActiveNavItem();
     })
     .catch(err => console.error("Lỗi khi tải header:", err));
 });
 
-// Load language 
+// --- Load Language On Startup (default EN for fallback) ---
 fetch('lang/en.json')
   .then(res => res.json())
   .then(data => {
     Object.keys(data).forEach(key => {
       if (key.startsWith('_')) return;
-
       const el = document.querySelector(`[data-i18n="${key}"]`);
       if (el) el.textContent = data[key];
     });
   });
-
-// Set active nav item
-  function setActiveNavItem() {
-    const currentPage = window.location.pathname.split('/').pop(); // select current page
-    document.querySelectorAll('.nav-link').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('header');
-    if (!container) {
-      console.error("Không tìm thấy phần tử #header trong DOM.");
-      return;
-    }
-  
-    fetch('header.html') 
-      .then(res => res.text())
-      .then(html => {
-        container.innerHTML = html;
-        initHeaderJS();       // Call functions 
-        setActiveNavItem();   // active nav item
-      })
-      .catch(err => console.error("Lỗi khi tải header:", err));
-  });
-
-
-  function initSubmenuLinkClickCloseMobileMenu() {
-    // Chỉ chọn các link trong submenu của Châu Âu (footEurope)
-    const submenuLinks = document.querySelectorAll('.dropdown-submenu .dropdown-menu .dropdown-item[href^="footEurope.html"]');
-  
-    submenuLinks.forEach(link => {
-      link.addEventListener('click', function (e) {
-        if (window.innerWidth < 992) {
-          // Đóng navbar ngay lập tức, không reload lại trang
-          const navbarToggler = document.querySelector('.navbar-toggler');
-          const navbarCollapse = document.querySelector('.navbar-collapse');
-  
-          if (navbarToggler && navbarCollapse.classList.contains('show')) {
-            navbarToggler.click();
-          }
-          // Sau đó mới chuyển trang
-          // Không cần setTimeout hoặc localStorage, chuyển thẳng
-          // Dùng setTimeout nhỏ nếu muốn hiệu ứng mượt hơn
-          setTimeout(() => {
-            window.location.href = this.getAttribute('href');
-          }, 150);
-          e.preventDefault();
-        }
-      });
-    });
-  }
-  function handleCloseMobileMenuAfterLoad() {
-    const shouldClose = localStorage.getItem('closeMobileMenuAfterLoad') === 'true';
-  
-    if (shouldClose) {
-      const navbarToggler = document.querySelector('.navbar-toggler');
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-  
-      if (navbarToggler && navbarCollapse) {
-        const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (collapseInstance) {
-          collapseInstance.hide();
-        } else {
-          new bootstrap.Collapse(navbarCollapse, { toggle: false }).hide();
-        }
-  
-        navbarToggler.classList.remove("rotate");
-      }
-  
-      localStorage.removeItem('closeMobileMenuAfterLoad');
-      localStorage.removeItem('redirectAfterLoad');
-    }
-  }
