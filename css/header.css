@@ -106,20 +106,15 @@
 
 /* Dropdown submenu */
 .dropdown-menu {
-    text-align: center;
-  width: auto !important;
+   text-align: center;
+   width: 120px !important;
   min-width: 120px !important;
-  display: none;
 }
 
 .nav-item.dropdown > .dropdown-menu {
     left: 50% !important;
     transform: translateX(-50%);
   }
-
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
 
   .dropdown-item:hover {
   background-color: var(--primary-color); /* hoặc màu bạn muốn, ví dụ: #2f5f46 */
@@ -147,20 +142,15 @@
     min-width: 200px;
     z-index: 999;
   }
-  /* Hiển thị khi hover vào dropdown */
-.nav-item.dropdown:hover > .dropdown-menu {
-    display: block;
-}
   
   .dropdown-submenu .dropdown-menu.show {
-    display: block !important; /* Hiển thị menu con khi có class 'show' */
+    display: block; /* Hiển thị menu con khi có class 'show' */
   }
 
   .navbar .nav-link.dropdown-toggle::after {
     display: none;
 }
 
-/* Responsive header */
 @media (min-width: 992px) {
 
     .nav-item.dropdown:hover > .dropdown-menu {
@@ -183,29 +173,27 @@
     }
     
   }
-
   @media (max-width: 991.98px) {
-    /* Đảm bảo dropdown menu sẽ hiển thị khi có class 'show' */
     .nav-item.dropdown > .dropdown-menu {
         left: 0 !important;
         transform: none !important;
-        display: none; /* Mặc định ẩn menu con */
-    }
+      }
+  }
 
-    .dropdown-submenu .dropdown-menu {
-        left: 0 !important;
-        transform: none !important;
-        display: none; /* Ẩn submenu mặc định */
-    }
-
-    .dropdown-submenu.show .dropdown-menu {
-        display: block !important; /* Hiển thị submenu khi có class 'show' */
-    }
-
-    /* Navbar */
+/* Responsive header */
+@media (max-width: 991.98px) {
     .navbar {
         padding: 10px 15px;
         display: flex;
+    }
+
+    .navbar-brand img {
+        width: 70px;
+    }
+
+    .navbar-toggler {
+        flex-shrink: 0;
+        z-index: 1051;
     }
 
     .navbar-collapse {
@@ -222,15 +210,22 @@
     .navbar-nav {
         flex-direction: column;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .navbar-nav .nav-item {
         width: auto;
         text-align: center;
+        margin-bottom: 10px;
     }
 
     .nav-item .d-flex {
         justify-content: center;
         margin-top: 10px;
+    }
+
+    .d-flex img {
+        width: 30px;
+        height: 20px;
     }
 }
