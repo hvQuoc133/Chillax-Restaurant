@@ -436,6 +436,12 @@ body {
     z-index: 1000;
 }
 
+.floating-wrapper.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
 /* Btn menu */
 .floating-menu {
     background-color: var(--bg-overlay-color);
@@ -599,18 +605,18 @@ html {
     /* Khi màn hình nhỏ hơn 480px */
     .background-img {
         width: auto;
-        height: 60vh;
+        height: auto;
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;   
     }
 
     .carousel-caption {
-        bottom: 520px;
+        top: 300px;
         /* Dịch lên trên hơn */
     }
     .carousel-control-prev, .carousel-control-next{
-        bottom: 300px;
+        bottom: 100px;
     }
 
     .background-img .content-bg {

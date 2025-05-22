@@ -1,0 +1,15 @@
+.settable-text img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 720px) {
+    .settable-text img {
+        max-width: 100%;
+        height: auto;
+    }
+}

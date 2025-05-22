@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contact.css">
 
     <!-- Rreload -->
     <link rel="preload" href="images/logo/logo-text.png" as="image">
@@ -48,7 +49,7 @@
 
 </head>
 
-<!-- Send mail set table -->
+<!-- Send mail contact -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
     (function () {
@@ -68,79 +69,50 @@
         <!-- Set Table Content -->
         <div class="settable-container" style="margin-top: 85px;">
             <div data-aos="fade-up" data-aos-duration="1000" class="settable-text">
-                <h2 data-i18n="title-settable">ĐẶT BÀN TẠI CHILLAX</h2>
-                <h5 data-i18n="text-settable">Quý khách vui lòng đặt bàn trước để có trải nghiệm thưởng thức ẩm thực tốt
-                    nhất tại Nhà hàng
-                    chillax. Gợi ý đặt bàn:</h5>
-                <h6 data-i18n="table-tip-1">> 1 person: single table</h6>
+                <h2 data-i18n="title-settable1">LIÊN HỆN VỚI CHÚNG TÔI</h2>
+                <h5 data-i18n="text-settable1">Chúng tôi luôn trân trọng mọi ý kiến của quý khách, ý kiến từ quý khách
+                    sẽ giúp chúng tôi nâng cao về chất lượng
+                    phục vụ chính quý khách cũng góp phần vào sự thành công và phát triển thương hiệu Chic Chillax của
+                    chúng tôi:</h5>
                 <hr>
-                <h6 data-i18n="table-tip-2">> 2 people: double table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-3">> Group of 4–6: 6-person table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-4">> Group of 6–12: long table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-5">> Group over 12: please call our Hotline directly: 0379.700.700</h6>
-                <hr>
+                <img src="images/bg-banner/bg-contact.jpg" alt="Ảnh đẹp Chillax" srcset="">
             </div>
             <div class="settable-booking">
-                <form data-aos="fade-up" data-aos-duration="1000" class="booking-form" method="POST"
-                    id="reservation-form">
+                <form data-aos="fade-up" data-aos-duration="1000" class="booking-form" method="POST" id="contact-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name" data-i18n="label-name">Họ và tên:</label>
                             <input type="text" id="name" name="name" required>
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group">
                             <label for="phone" data-i18n="label-phone">Số điện thoại:</label>
                             <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" required
                                 placeholder="+84: 0987654321">
                         </div>
-                    </div>
 
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email" data-i18n="label-email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="people" data-i18n="label-people">Số người:</label>
-                            <input type="number" id="people" name="people" min="1" max="30" required>
+                            <input type="email" id="email" name="email" required placeholder="abc@gmail.com">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="date" data-i18n="label-date">Ngày đặt:</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time" data-i18n="label-time">Giờ ăn:</label>
-                            <select id="time" name="time" required></select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="vehicle" data-i18n="label-vehicle">Loại xe:</label>
-                            <select id="vehicle" name="vehicle" required>
-                                <option data-i18n="select-car" value="">-- Chọn loại xe --</option>
-                                <option data-i18n="select-car-1" value="Xe máy">Xe máy</option>
-                                <option data-i18n="select-car-2" value="Xe ô tô 4 chỗ">Xe ô tô 4 chỗ</option>
-                                <option data-i18n="select-car-3" value="Xe khách 9 chỗ">Xe khách 9 chỗ</option>
-                                <option data-i18n="select-car-4" value="Xe khách 16 chỗ">Xe khách 16 chỗ</option>
-                                <option data-i18n="select-car-5" value="Xe khách 29 chỗ">Xe khách 29 chỗ</option>
-                                <option data-i18n="select-car-6" value="Xe khách 35 chỗ">Xe khách 35 chỗ</option>
-                                <option data-i18n="select-car-7" value="Xe khách 45 chỗ">Xe khách 45 chỗ</option>
-                            </select>
+                            <label for="purpose" data-i18n="label-contact">Mục đích liên hệ:</label>
+                            <input type="text" id="purpose" name="purpose" required>
                         </div>
                     </div>
 
                     <div class="form-row-full">
-                        <label for="message" data-i18n="label-message">Các yêu cầu:</label>
-                        <textarea id="myInput" name="message" rows="4"
-                            placeholder="Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiêng cử..."></textarea>
+                        <label for="message" data-i18n="label-message1">Nội dung chi tiết:</label>
+                        <textarea id="myInput" name="message" rows="4" placeholder="Nêu ý kiến của bạn"></textarea>
                     </div>
 
-                    <button type="submit" data-i18n="btn-submit">Gửi đặt bàn</button>
+                    <button type="submit" data-i18n="btn-submit1">Gửi liên hệ</button>
                 </form>
             </div>
         </div>
@@ -175,7 +147,8 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/include.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/contact.js"></script>
+
 </body>
 <!-- AOS Animate On Scroll -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

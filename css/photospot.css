@@ -1,0 +1,141 @@
+:root {
+    --bg-overlay-color: rgba(47, 95, 70, 1);
+    --primary-color: #F1C40F;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f6f8;
+    --background-main: rgba(243, 243, 235, 1);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--background-main);
+}
+
+.gallery-filter {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-filter button {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 24px;
+    border: none;
+    background: var(--bg-overlay-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 24px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    transition: background 0.3s cubic-bezier(.4, 0, .2, 1), color 0.3s cubic-bezier(.4, 0, .2, 1);
+    outline: none;
+}
+
+.gallery-filter button:hover,
+.gallery-filter button.active,
+.gallery-filter button:focus {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.autoImg {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+
+}
+
+.gallery-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    padding: 16px 0 32px 0;
+}
+
+.gallery-item {
+    width: 30%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    margin-bottom: 24px;
+    overflow: hidden;
+    margin: 12px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.5s, filter 0.4s;
+}
+
+/* Giới hạn chiều rộng ảnh lightbox */
+
+.lightboxOverlay {
+    height: 100vh !important;
+}
+
+.lb-outerContainer {
+    max-width: 80vw !important;
+    max-height: 80vh !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 auto;
+}
+
+.lb-image {
+    max-width: 100% !important;
+    max-height: 70vh !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .gallery-item {
+        width: 47%;
+    }
+}
+
+@media (max-width: 815px) {
+    .gallery-item {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        max-width: 94%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .gallery-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 8px;
+    }
+    .gallery-filter button {
+        flex: 0 1 48%;   /* Mỗi nút chiếm gần 1 nửa hàng, trừ gap là vừa */
+        min-width: 0;    /* Cho phép co lại theo flex-basis */
+        font-size: 15px;
+        padding: 8px 16px;
+        margin: 0;       /* Không dùng margin ngoài */
+        box-sizing: border-box;
+        text-align: center;
+    }
+}

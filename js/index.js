@@ -152,3 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', activateLink);
   activateLink(); // Gọi 1 lần khi load
 });
+
+//Hide floating button 
+window.addEventListener("scroll", function() {
+  const btn = document.querySelector('.floating-wrapper');
+  if (window.scrollY > 100) {
+    btn.classList.remove('hide');
+  } else {
+    btn.classList.add('hide');
+  }
+});
