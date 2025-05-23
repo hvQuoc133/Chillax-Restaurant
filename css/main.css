@@ -615,7 +615,7 @@ html {
     }
 
     .carousel-caption {
-        top: 300px;
+        top: 180px;
         /* Dịch lên trên hơn */
     }
     .carousel-control-prev, .carousel-control-next{
