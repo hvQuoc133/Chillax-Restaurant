@@ -52,8 +52,9 @@ main {
 .menu-container {
     width: 80%;
     margin: 0 auto;
+    min-height: 100vh;
     height: auto;
-    padding-top: 170px;
+    padding-top: 200px;
 }
 
 .menu-container h2 {
