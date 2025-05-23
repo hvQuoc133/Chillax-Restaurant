@@ -664,7 +664,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    .main-container-i {
+    .main-container-i, .floating-wrapper {
       display: none !important;
     }
   }
