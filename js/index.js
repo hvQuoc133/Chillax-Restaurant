@@ -1,4 +1,13 @@
 /* ---INDEX JS--- */
+
+/* Set banner full viewport */
+function setFullViewportHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setFullViewportHeight();
+window.addEventListener('resize', setFullViewportHeight);
 /* Set table */
 /* Auto day */
 const dateInput = document.getElementById('date');
