@@ -532,6 +532,12 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .space-content, .scene-content {
+      display: none !important;
+    }
+  }
+
 /* For devices with a width of 480px or less (mobile devices) */
 @media (max-width: 480px) {
     .space-content, .scene-content {
