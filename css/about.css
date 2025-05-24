@@ -44,7 +44,7 @@ body {
     margin-top: 200px;
     text-align: center;
     font-family: var(--font-family);
-    color: var(--bg-overlay-color);
+    color: var(--primary-color);
     font-weight: bold;
 }
 

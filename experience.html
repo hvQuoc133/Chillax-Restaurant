@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <title>Chic Chillax Restaurant</title>
@@ -9,7 +9,6 @@
     <meta name="description"
         content="Chic Chillax Restaurant - Ẩm thực fusion giữa cánh đồng lúa thanh bình, nơi lý tưởng để thư giãn và thưởng thức.">
     <meta name="keywords" content="Chic Chillax, nhà hàng, ẩm thực fusion, quán chill, đồng lúa, hangout, cafe">
-
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
                frame-src https://www.youtube.com https://maps.google.com https:;
                script-src 'self' 'unsafe-inline' https:;
@@ -29,7 +28,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/experience.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -47,104 +46,53 @@
 
 </head>
 
-<!-- Send mail set table -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function () {
-        emailjs.init("ZVOmX63s53yQNh6aP"); // Thay YOUR_PUBLIC_KEY bằng khóa công khai của bạn
-    })();
-</script>
-
 <body>
     <!-- Header -->
     <div id="header"></div>
 
     <!-- Banner -->
-
+     
     <!-- Banner end -->
 
+    <!-- Main content -->
     <main>
-        <!-- Set Table Content -->
-        <div class="settable-container" style="margin-top: 85px;">
-            <div data-aos="fade-up" data-aos-duration="1000" class="settable-text">
-                <h2 data-i18n="title-settable">ĐẶT BÀN TẠI CHILLAX</h2>
-                <h5 data-i18n="text-settable">Quý khách vui lòng đặt bàn trước để có trải nghiệm thưởng thức ẩm thực tốt
-                    nhất tại Nhà hàng
-                    chillax. Gợi ý đặt bàn:</h5>
-                <h6 data-i18n="table-tip-1">> 1 person: single table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-2">> 2 people: double table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-3">> Group of 4–6: 6-person table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-4">> Group of 6–12: long table</h6>
-                <hr>
-                <h6 data-i18n="table-tip-5">> Group over 12: please call our Hotline directly: 0379.700.700</h6>
-                <hr>
+        <div class="main-container">
+            <h1 data-i18n="title-p" data-aos="fade-up" data-aos-duration="1000">HOẠT ĐỘNG TRẢI NGHIỆM</h1>
+
+            <!-- PARALLAX SECTION -->
+            <section class="parallax-section-1">
+                <div class="parallax-bg-1"></div>
+                <div class="parallax-content-1">
+                    <h1 data-i18n="content-pl" data-aos="fade-up" data-aos-duration="1000">TRẢI NGHIỆM NẤU ĂN TẠI KHÔNG GIAN BẾP TRUYỀN THỐNG RIÊNG</h1>
+                </div>
+            </section>
+
+            <!-- About content main -->
+            <div class="about-content">
+                <p data-i18n="about-content" data-aos="fade-up" data-aos-duration="1000">Một trong những hoạt động được yêu thích tại Chillax là trải nghiệm nấu
+                     ăn trong không gian bếp truyền thống riêng. Tại đây, du khách không chỉ thưởng thức ẩm thực địa phương mà còn tự tay chuẩn bị, chế biến các
+                      món ăn đậm đà bản sắc vùng miền</p>
             </div>
-            <div class="settable-booking">
-                <form data-aos="fade-up" data-aos-duration="1000" class="booking-form" method="POST"
-                    id="reservation-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name" data-i18n="label-name">Họ và tên:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" data-i18n="label-phone">Số điện thoại:</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" required
-                                placeholder="+84: 0987654321">
-                        </div>
-                    </div>
+            <!-- End About content main -->
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email" data-i18n="label-email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="people" data-i18n="label-people">Số người:</label>
-                            <input type="number" id="people" name="people" min="1" max="30" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date" data-i18n="label-date">Ngày đặt:</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="time" data-i18n="label-time">Giờ ăn:</label>
-                            <select id="time" name="time" required></select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="vehicle" data-i18n="label-vehicle">Loại xe:</label>
-                            <select id="vehicle" name="vehicle" required>
-                                <option data-i18n="select-car" value="">-- Chọn loại xe --</option>
-                                <option data-i18n="select-car-1" value="Xe máy">Xe máy</option>
-                                <option data-i18n="select-car-2" value="Xe ô tô 4 chỗ">Xe ô tô 4 chỗ</option>
-                                <option data-i18n="select-car-3" value="Xe khách 9 chỗ">Xe khách 9 chỗ</option>
-                                <option data-i18n="select-car-4" value="Xe khách 16 chỗ">Xe khách 16 chỗ</option>
-                                <option data-i18n="select-car-5" value="Xe khách 29 chỗ">Xe khách 29 chỗ</option>
-                                <option data-i18n="select-car-6" value="Xe khách 35 chỗ">Xe khách 35 chỗ</option>
-                                <option data-i18n="select-car-7" value="Xe khách 45 chỗ">Xe khách 45 chỗ</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="form-row-full">
-                        <label for="message" data-i18n="label-message">Các yêu cầu:</label>
-                        <textarea id="myInput" name="message" rows="4"
-                            placeholder="Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiêng cử..."></textarea>
-                    </div>
+            <!-- PARALLAX SECTION -->
+            <section class="parallax-section-2">
+                <div class="parallax-bg-2"></div>
+                <div class="parallax-content-2">
+                    <h1 data-i18n="content-pl" data-aos="fade-up" data-aos-duration="1000">HOẠT ĐỘNG NÔNG NGHIỆP TRỒNG LÚA TRUYỀN THỐNG</h1>
+                </div>
+            </section>
 
-                    <button type="submit" data-i18n="btn-submit">Gửi đặt bàn</button>
-                </form>
+            <div class="about-content">
+                <p data-i18n="about-content" data-aos="fade-up" data-aos-duration="1000">Tại Chillax, du khách có cơ hội trực tiếp tham gia 
+                    vào hoạt động trồng lúa truyền thống cùng người dân địa phương, hoạt động này không chỉ mang lại niềm vui, sự thư giãn mà
+                     còn giúp du khách trân trọng hơn giá trị của hạt gạo và công sức lao động.</p>
             </div>
+
         </div>
-        <!-- End Set Table Content -->
     </main>
+    <!-- End Main content -->
 
     <!-- Scroll to top -->
     <button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">
@@ -162,20 +110,17 @@
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
-
     <script src="js/main.js" defer></script>
     <script src="js/include.js"></script>
-    <script src="js/index.js"></script>
 </body>
 <!-- AOS Animate On Scroll -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
