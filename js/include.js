@@ -1,10 +1,46 @@
-/* Reuse header and footer */
+// Hàm filter menu nước
+function filterMenu(category) {
+    const items = document.querySelectorAll('.menu-item');
+    items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    // Cuộn lên phần menu nếu cần
+    const menuContainer = document.querySelector('.menu-container');
+    if (menuContainer) {
+        menuContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Chờ header/footer load xong mới filter
 document.addEventListener("DOMContentLoaded", () => {
+    let loaded = 0;
+    function afterLoad() {
+        loaded++;
+        if (loaded === 2) {
+            runMenuFilter();
+            window.addEventListener("hashchange", runMenuFilter);
+        }
+    }
+    function runMenuFilter() {
+        const hash = window.location.hash.substring(1);
+        filterMenu(hash || 'all');
+    }
+
     fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data);
-  
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+            afterLoad();
+        });
+
     fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
-  })
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+            afterLoad();
+        });
+});

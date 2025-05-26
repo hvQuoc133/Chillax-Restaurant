@@ -317,6 +317,16 @@
     <script src="js/main.js" defer></script>
     <script src="js/include.js"></script>
     <script src="js/foodMenu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.navMenuCustom');
+
+  menuToggle.addEventListener('click', function () {
+    navMenu.classList.toggle('active');
+  });
+});
+    </script>
 </body>
 <!-- AOS Animate On Scroll -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
