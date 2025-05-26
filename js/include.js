@@ -21,6 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
         if (loaded === 2) {
             runMenuFilter();
             window.addEventListener("hashchange", runMenuFilter);
+
+            // Đóng dropdown menu khi chọn một mục (lúc này header đã có trên DOM)
+            document.querySelectorAll('.dropdown-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Tìm dropdown cha
+                    const dropdown = link.closest('.dropdown');
+                    if (dropdown) {
+                        const toggle = dropdown.querySelector('.dropdown-toggle');
+                        if (toggle && window.bootstrap) {
+                            const instance = window.bootstrap.Dropdown.getInstance(toggle);
+                            if (instance) {
+                                instance.hide(); // Đóng dropdown
+                            }
+                        }
+                    }
+                });
+            });
         }
     }
     function runMenuFilter() {

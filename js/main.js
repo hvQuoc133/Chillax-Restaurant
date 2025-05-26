@@ -33,7 +33,7 @@ function initMobileSubmenuBehavior() {
   });
 
   // 3. Khi click vào item submenu (món ăn...), đóng luôn navbar-collapse rồi chuyển trang
-  document.querySelectorAll('.dropdown-submenu .dropdown-menu .dropdown-item').forEach(link => {
+  document.querySelectorAll('.drink-menu .dropdown-item').forEach(link => {
     link.addEventListener('click', function (e) {
       if (window.innerWidth < 992) {
         e.preventDefault();
