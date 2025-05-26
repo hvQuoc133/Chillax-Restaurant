@@ -205,4 +205,22 @@ fetch('lang/en.json')
     });
   });
 
+  function closeAllParentDropdowns(element) {
+    let parent = element.closest('.dropdown');
+    while (parent) {
+      const toggle = parent.querySelector('.dropdown-toggle');
+      if (toggle && window.bootstrap && window.bootstrap.Dropdown) {
+        const instance = window.bootstrap.Dropdown.getInstance(toggle);
+        if (instance) instance.hide();
+      }
+      parent = parent.parentElement ? parent.parentElement.closest('.dropdown') : null;
+    }
+  }
   
+  function initDropdownCloseOnClick() {
+    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(link => {
+      link.addEventListener('click', function() {
+        closeAllParentDropdowns(this);
+      });
+    });
+  }

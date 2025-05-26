@@ -12,6 +12,10 @@ function filterMenu(category) {
     if (menuContainer) {
         menuContainer.scrollIntoView({ behavior: 'smooth' });
     }
+    // Cập nhật lại hiệu ứng AOS nếu có
+    if (window.AOS && typeof window.AOS.refresh === 'function') {
+        window.AOS.refresh();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,15 +44,18 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }
+    // CHỈ ĐỊNH NGHĨA 1 LẦN, THÊM setTimeout 50ms
     function runMenuFilter() {
-        const hash = window.location.hash.substring(1);
-        filterMenu(hash || 'all');
+        setTimeout(() => {
+            const hash = window.location.hash.substring(1);
+            filterMenu(hash || 'all');
+        }, 50);
     }
 
     fetch("header.html")
         .then(res => res.text())
         .then(data => {
-            document.getElementById("header").innerHTML = data;http://127.0.0.1:5500/drinkMenu.html#drink-1
+            document.getElementById("header").innerHTML = data;
             afterLoad();
         });
 
