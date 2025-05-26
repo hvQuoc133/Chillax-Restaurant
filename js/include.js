@@ -1,4 +1,3 @@
-// Hàm filter menu nước
 function filterMenu(category) {
     const items = document.querySelectorAll('.menu-item');
     items.forEach(item => {
@@ -15,7 +14,6 @@ function filterMenu(category) {
     }
 }
 
-// Chờ header/footer load xong mới filter
 document.addEventListener("DOMContentLoaded", () => {
     let loaded = 0;
     function afterLoad() {
