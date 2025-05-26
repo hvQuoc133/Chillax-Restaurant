@@ -79,7 +79,6 @@
     transition: transform 0.5s, filter 0.4s;
 }
 
-/* Giới hạn chiều rộng ảnh lightbox */
 
 .lightboxOverlay {
     height: 100vh !important;
@@ -129,12 +128,13 @@
         justify-content: center;
         gap: 12px 8px;
     }
+
     .gallery-filter button {
-        flex: 0 1 48%;   /* Mỗi nút chiếm gần 1 nửa hàng, trừ gap là vừa */
-        min-width: 0;    /* Cho phép co lại theo flex-basis */
+        flex: 0 1 48%;
+        min-width: 0;
         font-size: 15px;
         padding: 8px 16px;
-        margin: 0;       /* Không dùng margin ngoài */
+        margin: 0;
         box-sizing: border-box;
         text-align: center;
     }

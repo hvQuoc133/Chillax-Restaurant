@@ -18,11 +18,19 @@ function filterMenu(category) {
     }
 }
 
+// Khi header và footer đã load xong mới gắn event
 document.addEventListener("DOMContentLoaded", () => {
     let loaded = 0;
     function afterLoad() {
         loaded++;
         if (loaded === 2) {
+            // Gắn event filter menu
+            function runMenuFilter() {
+                setTimeout(() => {
+                    const hash = window.location.hash.substring(1);
+                    filterMenu(hash || 'all');
+                }, 50);
+            }
             runMenuFilter();
             window.addEventListener("hashchange", runMenuFilter);
 
@@ -43,13 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
         }
-    }
-    // CHỈ ĐỊNH NGHĨA 1 LẦN, THÊM setTimeout 50ms
-    function runMenuFilter() {
-        setTimeout(() => {
-            const hash = window.location.hash.substring(1);
-            filterMenu(hash || 'all');
-        }, 50);
     }
 
     fetch("header.html")

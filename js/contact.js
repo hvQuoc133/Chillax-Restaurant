@@ -1,17 +1,17 @@
 /* Send mail contact */
 document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Chặn gửi form
+    event.preventDefault(); // Block send form
 
     const form = this;
     const email = document.getElementById('email').value;
-    const apiKey = '681783632587d3e2361ad3f35db1753d'; // Thay bằng API Key thực tế
+    const apiKey = '681783632587d3e2361ad3f35db1753d'; // API Key 
 
     // Call API check email
     fetch(`https://apilayer.net/api/check?access_key=${apiKey}&email=${encodeURIComponent(email)}&smtp=1&format=1`)
         .then(res => res.json())
         .then(data => {
             if (data.format_valid && data.smtp_check) {
-                // Email hợp lệ → gửi form
+                // Email valid -> send mail
                 emailjs.sendForm('service_9fooih6', 'template_xh917in', form)
                     .then(function (response) {
                         Toastify({
@@ -34,7 +34,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
                         }).showToast();
                     });
             } else {
-                // Email không tồn tại
+                // Email invalid
                 Toastify({
                     text: "❗ Email không hợp lệ hoặc không tồn tại.",
                     duration: 3000,

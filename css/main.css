@@ -441,7 +441,7 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-  }
+}
 
 /* Btn menu */
 .floating-menu {
@@ -462,7 +462,7 @@ body {
 .floating-list {
     position: absolute;
     top: 1px;
-    right: 70px; 
+    right: 70px;
     display: none;
     flex-direction: column;
     background-color: white;
@@ -470,8 +470,8 @@ body {
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     gap: 10px;
-    list-style: none; /* Bỏ dấu chấm */
-    margin: 0;         /* Xóa khoảng trắng mặc định */
+    list-style: none;
+    margin: 0;
     width: 100px;
     font-size: 14px;
 }
@@ -503,20 +503,20 @@ html {
 }
 
 .floating-menu.rotate i {
-    transform: rotate(90deg); /* hoặc 180deg tùy bạn muốn xoay bao nhiêu */
+    transform: rotate(90deg);
 }
 
-/* Ẩn floating menu trên màn hình lớn (desktop) */
+/* Hide floating menu (desktop) */
 .floating-wrapper {
     display: none;
-  }
-  
-  /* Hiện floating menu khi màn hình nhỏ hơn hoặc bằng 768px */
-  @media (max-width: 768px) {
+}
+
+/* Show floating menu  768px */
+@media (max-width: 768px) {
     .floating-wrapper {
-      display: block;
+        display: block;
     }
-  }
+}
 
 
 /* Footer content */
@@ -567,74 +567,62 @@ html {
 /* Responsive Banner screens */
 @media (max-width: 768px) {
 
-    /* Khi màn hình nhỏ hơn 768px */
     .background-img {
-        height: 100svh; /* sử dụng đơn vị svh thay cho vh trên mobile hiện đại */
-    min-height: 100svh;
-    max-height: 100svh;
-        /* Giảm chiều cao của background */
+        height: 100svh;
+        min-height: 100svh;
+        max-height: 100svh;
     }
 
     .carousel-caption {
         bottom: 400px;
-        /* Dịch lên trên một chút */
     }
 
     .background-img .content-bg {
         font-size: 20px;
-        /* Giảm font size trên các màn hình nhỏ */
         bottom: 15%;
-        /* Dịch lên trên để vừa với không gian */
     }
 
     .background-img .text-logo {
         width: 200px;
-        /* Giảm kích thước logo thêm */
     }
 
     .carousel-caption p {
         font-size: 18px;
-        /* Giảm kích thước font cho chữ trong carousel */
     }
 
     .content-bg button {
         width: 130px;
-        /* Giảm kích thước button */
     }
 }
 
 @media (max-width: 480px) {
-
-    /* Khi màn hình nhỏ hơn 480px */
     .background-img {
         width: auto;
         height: auto;
         background-size: cover;
         background-position: center bottom;
-        background-repeat: no-repeat;   
+        background-repeat: no-repeat;
     }
 
     .carousel-caption {
         top: 180px;
-        /* Dịch lên trên hơn */
     }
-    .carousel-control-prev, .carousel-control-next{
+
+    .carousel-control-prev,
+    .carousel-control-next {
         bottom: 100px;
     }
 
     .background-img .content-bg {
         font-size: 18px;
-        /* Giảm thêm kích thước font */
     }
 
     .background-img .text-logo {
         width: 150px;
-        /* Giảm logo cho màn hình rất nhỏ */
     }
 
     .carousel-caption p {
         font-size: 16px;
-        /* Giảm kích thước font */
     }
 
     .content-bg button {
@@ -664,10 +652,12 @@ html {
 }
 
 @media (max-width: 768px) {
-    .main-container-i, .floating-wrapper {
-      display: none !important;
+
+    .main-container-i,
+    .floating-wrapper {
+        display: none !important;
     }
-  }
+}
 
 @media (max-width: 991.98px) {
     .menu-content .title-content {
@@ -749,6 +739,7 @@ html {
         flex-direction: column;
         gap: 15px;
     }
+
     .settable-booking .booking-form {
         height: auto;
     }

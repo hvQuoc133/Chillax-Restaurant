@@ -147,7 +147,6 @@
 .dropdown-item i {
     vertical-align: middle;
     font-size: 0.75em;
-    /* hoặc điều chỉnh theo kích thước mong muốn */
     line-height: 1;
     margin-top: 8px;
 }
@@ -166,7 +165,6 @@
 
 .dropdown-submenu .dropdown-menu {
     display: none;
-    /* Ẩn menu con mặc định */
     position: absolute;
     left: 100%;
     top: 0;
@@ -176,7 +174,6 @@
 
 .dropdown-submenu .dropdown-menu.show {
     display: block;
-    /* Hiển thị menu con khi có class 'show' */
 }
 
 .navbar .nav-link.dropdown-toggle::after {
@@ -194,7 +191,6 @@
 
     .dropdown-submenu .dropdown-menu {
         left: 100%;
-        /* canh bên phải menu cha */
         top: 0;
         margin-top: -1px;
         min-width: 180px;
@@ -223,7 +219,6 @@
         box-shadow: none;
         padding: 8px 0;
         margin-left: -16px;
-        /* nếu menu bị lệch do padding của container, chỉnh lại */
     }
 
     .dropdown-submenu .dropdown-menu {
@@ -277,7 +272,7 @@
     .navbar-nav .nav-item {
         width: auto;
         text-align: center;
-        margin-bottom: 10px;    
+        margin-bottom: 10px;
     }
 
     .nav-item .d-flex {

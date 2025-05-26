@@ -13,8 +13,8 @@ window.addEventListener('resize', setFullViewportHeight);
 const dateInput = document.getElementById('date');
 const today = new Date();
 const yyyy = today.getFullYear();
-const mm = String(today.getMonth() + 1).padStart(2, '0'); // Tháng (0-11)
-const dd = String(today.getDate()).padStart(2, '0'); // Ngày
+const mm = String(today.getMonth() + 1).padStart(2, '0'); // Month (0-11)
+const dd = String(today.getDate()).padStart(2, '0'); // Day
 
 const minDate = `${yyyy}-${mm}-${dd}`;
 dateInput.min = minDate;
@@ -23,7 +23,7 @@ dateInput.min = minDate;
 const timeSelect = document.getElementById("time");
 for (let hour = 8; hour <= 20; hour++) {
   const times = [`${hour}:00`, `${hour}:30`];
-  if (hour === 20) times.pop(); // chỉ đến 21:30
+  if (hour === 20) times.pop(); //  21:30 
   times.forEach(t => {
     const option = document.createElement('option');
     option.value = t;
@@ -34,18 +34,18 @@ for (let hour = 8; hour <= 20; hour++) {
 
 /* Send mail set table */
 document.getElementById('reservation-form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Chặn gửi form
+  event.preventDefault(); // Block send form
 
   const form = this;
   const email = document.getElementById('email').value;
-  const apiKey = '681783632587d3e2361ad3f35db1753d'; // Thay bằng API Key thực tế
+  const apiKey = '681783632587d3e2361ad3f35db1753d'; // API Key 
 
   // Call API check email
   fetch(`https://apilayer.net/api/check?access_key=${apiKey}&email=${encodeURIComponent(email)}&smtp=1&format=1`)
     .then(res => res.json())
     .then(data => {
       if (data.format_valid && data.smtp_check) {
-        // Email hợp lệ → gửi form
+        // Email valid → send form
         emailjs.sendForm('service_hx8pgh5', 'template_ac820p4', form)
           .then(function (response) {
             Toastify({
@@ -68,7 +68,7 @@ document.getElementById('reservation-form').addEventListener('submit', function 
             }).showToast();
           });
       } else {
-        // Email không tồn tại
+        // Email invalid
         Toastify({
           text: "❗ Email không hợp lệ hoặc không tồn tại.",
           duration: 3000,
@@ -109,13 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuList = document.querySelector('.floating-list');
   const menuLinks = document.querySelectorAll('.floating-list a');
 
-  // Toggle menu + icon xoay
+  // Toggle menu + icon 
   menuBtn.addEventListener('click', () => {
     menuList.classList.toggle('active');
     menuBtn.classList.toggle('rotate');
   });
 
-  // Khi click vào mục, ẩn menu và reset icon
+  // Hide menu and reset toggle
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       menuList.classList.remove('active');
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll Spy chính xác
+  // Scroll Spy 
   const sections = Array.from(menuLinks).map(link => {
     const id = link.getAttribute('href').substring(1);
     return document.getElementById(id);
@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSectionId = null;
     const scrollPosition = window.scrollY + 120;
 
-    // Duyệt từ dưới lên để bắt đúng section đang hiển thị
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
       if (section && scrollPosition >= section.offsetTop) {
@@ -142,13 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Nếu không ở trong bất kỳ section nào => gỡ active hết
+    // Remove active class 
     if (!currentSectionId) {
       menuLinks.forEach(link => link.classList.remove('active'));
       return;
     }
 
-    // Gán/tắt class active tương ứng
+    // Assign/disable active class
     menuLinks.forEach(link => {
       if (link.getAttribute('href') === `#${currentSectionId}`) {
         link.classList.add('active');
@@ -159,11 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', activateLink);
-  activateLink(); // Gọi 1 lần khi load
+  activateLink();
 });
 
 //Hide floating button 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   const btn = document.querySelector('.floating-wrapper');
   if (window.scrollY > 100) {
     btn.classList.remove('hide');
