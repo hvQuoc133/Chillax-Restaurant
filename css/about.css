@@ -540,6 +540,18 @@ body {
         padding: 20px 5%;
     }
 
+    .about-content p {
+        font-size: 18px;
+    }
+
+    .parallax-content-1 h1, .parallax-content-2 h1  {
+        font-size: 20px;
+    }
+
+    .about-content h4 {
+        font-size: 18px;
+    }
+
     .space-content .imgspace-content, .scene-content .imgscene-content{
         grid-template-columns: repeat(1, 100%);
         gap: 15px;

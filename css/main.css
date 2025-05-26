@@ -76,6 +76,11 @@ body {
     height: auto;
 }
 
+.carousel-control-next-icon, .carousel-control-prev-icon {
+width: 3rem !important;
+height: 3rem !important;
+}
+
 /* Banner Content text */
 .background-img .content-bg {
     position: absolute;
