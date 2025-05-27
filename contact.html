@@ -61,10 +61,6 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Banner -->
-
-    <!-- Banner end -->
-
     <main>
         <!-- Contact Content -->
         <div class="settable-container" style="margin-top: 85px;">
@@ -81,22 +77,21 @@
                 <form data-aos="fade-up" data-aos-duration="1000" class="booking-form" method="POST" id="contact-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name" data-i18n="label-name">Họ và tên:</label>
+                            <label for="name" data-i18n="label-name-contact">Họ và tên:</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone" data-i18n="label-phone">Số điện thoại:</label>
+                            <label for="phone" data-i18n="label-phone-contact">Số điện thoại:</label>
                             <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" required
                                 placeholder="+84: 0987654321">
                         </div>
-
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="email" data-i18n="label-email">Email:</label>
+                            <label for="email" data-i18n="label-email-contact">Email:</label>
                             <input type="email" id="email" name="email" required placeholder="abc@gmail.com">
                         </div>
                     </div>
@@ -109,7 +104,8 @@
 
                     <div class="form-row-full">
                         <label for="message" data-i18n="label-message1">Nội dung chi tiết:</label>
-                        <textarea id="myInput" name="message" rows="4" placeholder="Nêu ý kiến của bạn"></textarea>
+                        <textarea id="inputContact" name="message" rows="4"
+                            placeholder="Ví dụ: Nêu ý kiến góp ý của bạn về nhà hàng, món ăn, dịch vụ..."></textarea>
                     </div>
 
                     <button type="submit" data-i18n="btn-submit1">Gửi liên hệ</button>

@@ -92,16 +92,23 @@ document.getElementById('reservation-form').addEventListener('submit', function 
     });
 });
 
-/* Change lang placeholder */
+/* Change lang placeholder booking*/
 function changeLang(lang) {
   const input = document.getElementById("myInput");
-  if (lang === 'vi') {
-    input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
-  } else if (lang === 'en') {
-    input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
+  if (input) {
+      if (lang === 'vi') {
+        input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
+      } else if (lang === 'en') {
+        input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
+      }
   }
 }
-
+// Call changeLang when the page loads: 
+document.addEventListener('DOMContentLoaded', function() {
+  // Set default language from localStorage or use 'vi'
+  let lang = localStorage.getItem('lang') || 'vi';
+  changeLang(lang);
+});
 
 /* Floating menu */
 document.addEventListener('DOMContentLoaded', () => {

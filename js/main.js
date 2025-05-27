@@ -157,16 +157,50 @@ function setActiveNavItem() {
 }
 
 // --- Zoom Images Modal ---
+let galleryImages = [];
+let currentIndex = 0;
+
+// Call this function to initialize the gallery modal
+function initGalleryModal() {
+  galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+  galleryImages.forEach((img, idx) => {
+    img.onclick = function(e) {
+      e.stopPropagation();
+      openModalWithIndex(idx);
+    }
+  });
+}
+
+function openModalWithIndex(idx) {
+  currentIndex = idx;
+  openModal(galleryImages[idx].src);
+}
+
 function openModal(src) {
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   modal.style.display = "flex";
   modalImg.src = src;
 }
+
 function closeModal() {
   document.getElementById("imageModal").style.display = "none";
 }
 
+// Next/Prev with modal
+function nextImage() {
+  if (galleryImages.length === 0) return;
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  openModal(galleryImages[currentIndex].src);
+}
+function prevImage() {
+  if (galleryImages.length === 0) return;
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  openModal(galleryImages[currentIndex].src);
+}
+
+// Initialize modal events
+document.addEventListener("DOMContentLoaded", initGalleryModal);
 // --- Init All Header JS ---
 function initHeaderJS() {
   initMobileSubmenuBehavior();

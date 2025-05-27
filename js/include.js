@@ -7,18 +7,18 @@ function filterMenu(category) {
             item.style.display = 'none';
         }
     });
-    // Cuộn lên phần menu nếu cần
+    
     const menuContainer = document.querySelector('.menu-container');
     if (menuContainer) {
         menuContainer.scrollIntoView({ behavior: 'smooth' });
     }
-    // Cập nhật lại hiệu ứng AOS nếu có
+    // Update AOS animations
     if (window.AOS && typeof window.AOS.refresh === 'function') {
         window.AOS.refresh();
     }
 }
 
-// Khi header và footer đã load xong mới gắn event
+// When the DOM is fully loaded, fetch and insert header and footer
 document.addEventListener("DOMContentLoaded", () => {
     let loaded = 0;
     function afterLoad() {
@@ -34,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             runMenuFilter();
             window.addEventListener("hashchange", runMenuFilter);
 
-            // Đóng dropdown menu khi chọn một mục (lúc này header đã có trên DOM)
             document.querySelectorAll('.dropdown-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    // Tìm dropdown cha
                     const dropdown = link.closest('.dropdown');
                     if (dropdown) {
                         const toggle = dropdown.querySelector('.dropdown-toggle');

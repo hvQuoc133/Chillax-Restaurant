@@ -10,77 +10,58 @@
         content="Chic Chillax Restaurant - Ẩm thực fusion giữa cánh đồng lúa thanh bình, nơi lý tưởng để thư giãn và thưởng thức.">
     <meta name="keywords" content="Chic Chillax, nhà hàng, ẩm thực fusion, quán chill, đồng lúa, hangout, cafe">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-               frame-src https://www.youtube.com https://maps.google.com https:;
-               script-src 'self' 'unsafe-inline' https:;
-               style-src 'self' 'unsafe-inline' https:;
-               img-src 'self' data: https:;
-               font-src 'self' https:;
-               connect-src 'self' https:;">
-
     <link rel="icon" href="images/logo/logo-text.png" type="image/png">
-
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
     <!-- Css -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/menu.css">
-
-    <!-- Rreload -->
     <link rel="preload" href="images/logo/logo-text.png" as="image">
-
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-    <!-- Header -->
     <div id="header"></div>
 
-    <!-- Banner -->
-
-    <!-- Banner end -->
     <main>
         <div class="menu-container">
-            <h2>THỰC ĐƠN NƯỚC</h2>
+            <h2 data-i18n="drinkMenu.title">THỰC ĐƠN NƯỚC</h2>
             <div class="menu-view">
-                <!-- Drink 1  -->
+
+                <!-- Drink 1 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-1">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-1.1.JPG" alt="Cà phê muối" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">CÀ PHÊ MUỐI</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
-                        <b>65.000 VND</b>
-                    </div>
-                </div>               
-                <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-1">
-                    <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-1.2.JPG" alt="Cà phê dừa" class="zoom-image">
-                    </div>
-                    <div class="menu-info">
-                        <h2 data-i18n="food">CÀ PHÊ DỪA</h2>
-                        <h6 data-i18n="typeOFfood-" class="overlay">Đá / Nóng</h6>
+                        <h2 data-i18n="drinkMenu.coffeeSalt">CÀ PHÊ MUỐI</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-1">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-1.3.JPG" alt="Cà phê hoả ngục" class="zoom-image">
+                        <img loading="lazy" src="images/drinkMenu/Drink-1.2.JPG" alt="Cà phê dừa" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">CÀ PHÊ HOẢ NGỤC</h2>
-                        <h6 data-i18n="typeOFfood-" class="overlay">Đá / Nóng</h6>
+                        <h2 data-i18n="drinkMenu.coffeeCoconut">CÀ PHÊ DỪA</h2>
+                        <h6 data-i18n="drinkMenu.iceOrHot" class="overlay">Đá / Nóng</h6>
+                        <b>65.000 VND</b>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-1">
+                    <div class="menu-img">
+                        <img loading="lazy" src="images/drinkMenu/Drink-1.3.JPG" alt="Cà phê hoả ngục"
+                            class="zoom-image">
+                    </div>
+                    <div class="menu-info">
+                        <h2 data-i18n="drinkMenu.coffeeHell">CÀ PHÊ HOẢ NGỤC</h2>
+                        <h6 data-i18n="drinkMenu.iceOrHot" class="overlay">Đá / Nóng</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
@@ -89,21 +70,21 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-1.4.JPG" alt="Bạc xỉu" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">BẠC XỈU</h2>
-                        <h6 data-i18n="typeOFfood-" class="overlay">Đá / Nóng</h6>
+                        <h2 data-i18n="drinkMenu.bacXiu">BẠC XỈU</h2>
+                        <h6 data-i18n="drinkMenu.iceOrHot" class="overlay">Đá / Nóng</h6>
                         <b>55.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 2  -->
+                <!-- Drink 2 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-2">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-2.1.JPG" alt="Trà gừng thảo mộc"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ GỪNG THẢO MỘC</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.gingerHerbalTea">TRÀ GỪNG THẢO MỘC</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -113,8 +94,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ CHANH CAM THẢO</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.lemonLicoriceTea">TRÀ CHANH CAM THẢO</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -124,21 +105,21 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ CÚC CAM THẢO</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.chamomileLicoriceTea">TRÀ CÚC CAM THẢO</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 3  -->
+                <!-- Drink 3 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-3">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-3.1.JPG" alt="Trà xoài Machiato"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ XOÀI MACHIATO</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.mangoMachiatoTea">TRÀ XOÀI MACHIATO</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -148,8 +129,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ DÂU ỔI HỒNG</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.strawberryGuavaTea">TRÀ DÂU ỔI HỒNG</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -159,8 +140,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ ĐÀO CAM SẢ</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.peachOrangeLemongrassTea">TRÀ ĐÀO CAM SẢ</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -170,22 +151,21 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">TRÀ SEN CHILLAX</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.lotusTea">TRÀ SEN CHILLAX</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 4  -->
+                <!-- Drink 4 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-4">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-4.1.jpg" alt="Sữa chua trái cây"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">SỮA CHUA TRÁI CÂY</h2>
-                        <h6 data-i18n="typeOFfood" class="overlay"> Một Loại</h6>
-                        </h6>
+                        <h2 data-i18n="drinkMenu.yogurtFruit">SỮA CHUA TRÁI CÂY</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>70.000 VND</b>
                     </div>
                 </div>
@@ -194,8 +174,8 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-4.2.jpg" alt="Kem socola" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">KEM SOCOLA</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.chocolateIceCream">KEM SOCOLA</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>50.000 VND</b>
                     </div>
                 </div>
@@ -204,8 +184,8 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-4.3.jpg" alt="Kem vani" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">KEM VANI</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.vanillaIceCream">KEM VANI</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>50.000 VND</b>
                     </div>
                 </div>
@@ -214,20 +194,20 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-4.4.jpg" alt="Kem dừa" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">KEM DỪA</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.coconutIceCream">KEM DỪA</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>50.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 5  -->
+                <!-- Drink 5 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-5">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-5.1.JPG" alt="Lassi bơ" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">LASSI BƠ</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.lassiAvocado">LASSI BƠ</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
@@ -236,50 +216,51 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-5.2.jpg" alt="Lassi xoài" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">LASSI XOÀI</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.lassiMango">LASSI XOÀI</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-5">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-5.3.jpg" alt="Lassi xoài" class="zoom-image">
+                        <img loading="lazy" src="images/drinkMenu/Drink-5.3.jpg" alt="Lassi chanh dây"
+                            class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">LASSI CHANH DÂY</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.lassiPassion">LASSI CHANH DÂY</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-5">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-5.4.jpg" alt="Lassi xoài" class="zoom-image">
+                        <img loading="lazy" src="images/drinkMenu/Drink-5.4.jpg" alt="Lassi chuối" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">LASSI CHUỐI</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.lassiBanana">LASSI CHUỐI</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 6  -->
+                <!-- Drink 6 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-6">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-6.1.JPG" alt="Matcha dừa" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">MATCHA DỪA</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.matchaCoconut">MATCHA DỪA</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-6">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-6.2.jpg" alt="Matcha late" class="zoom-image">
+                        <img loading="lazy" src="images/drinkMenu/Drink-6.2.jpg" alt="Matcha latte" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">MATCHA LATE</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.matchaLatte">MATCHA LATTE</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
@@ -289,8 +270,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">SOCOLA ĐÁ XOAY</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.chocolateIceBlend">SOCOLA ĐÁ XOAY</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
@@ -299,21 +280,21 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-6.4.jpg" alt="Socola dừa" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">SOCOLA DỪA</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.chocolateCoconut">SOCOLA DỪA</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 7  -->
+                <!-- Drink 7 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-7">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-7.1.png" alt="Nước ép cà rốt"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">NƯỚC ÉP CÀ RỐT</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.carrotJuice">NƯỚC ÉP CÀ RỐT</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -323,9 +304,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">NƯỚC ỔI ÉP TẮC</h2>
-                        <h6 data-i18n="typeOFfood" class="overlay"> Một Loại</h6>
-                        </h6>
+                        <h2 data-i18n="drinkMenu.guavaTangerineJuice">NƯỚC ỔI ÉP TẮC</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -335,34 +315,31 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">NƯỚC CHANH SẢ TẮC</h2>
-                        <h6 data-i18n="typeOFfood" class="overlay"> Một Loại</h6>
-                        </h6>
+                        <h2 data-i18n="drinkMenu.lemonLemongrassJuice">NƯỚC CHANH SẢ TẮC</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>60.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-7">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-7.4.jpg" alt="Nước dưa hấu"
-                            class="zoom-image">
+                        <img loading="lazy" src="images/drinkMenu/Drink-7.4.jpg" alt="Nước dưa hấu" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">NƯỚC DƯA HẤU</h2>
-                        <h6 data-i18n="typeOFfood" class="overlay"> Một Loại</h6>
-                        </h6>
+                        <h2 data-i18n="drinkMenu.watermelonJuice">NƯỚC DƯA HẤU</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 8  -->
+                <!-- Drink 8 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-8">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-8.1.JPG" alt="Detox cà rốt & thơm"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">DETOX CÀ RỐT & THƠM</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.detoxCarrotPineapple">DETOX CÀ RỐT & THƠM</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
@@ -372,32 +349,32 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">DETOX PHỤC HỒI NĂNG LƯỢNG</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.detoxEnergy">DETOX PHỤC HỒI NĂNG LƯỢNG</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>65.000 VND</b>
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-8">
                     <div class="menu-img">
-                        <img loading="lazy" src="images/drinkMenu/Drink-8.3.JPG" alt="Detox phục hồi năng lượng"
+                        <img loading="lazy" src="images/drinkMenu/Drink-8.3.JPG" alt="Detox cà rốt & củ dền & cam"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">DETOX CÀ RỐT & CỦ DỀN & CAM</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.detoxCarrotBeetOrange">DETOX CÀ RỐT & CỦ DỀN & CAM</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>69.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 9  -->
+                <!-- Drink 9 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-9">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-9.1.jpg" alt="Mocktail Love Song"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">MOCKTAIL LOVE SONG</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.mocktailLoveSong">MOCKTAIL LOVE SONG</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>105.000 VND</b>
                     </div>
                 </div>
@@ -406,33 +383,32 @@
                         <img loading="lazy" src="images/drinkMenu/Drink-9.2.jpg" alt="Mocktail SU27" class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">MOCKTAIL SU27</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một Loại</h6>
+                        <h2 data-i18n="drinkMenu.mocktailSu27">MOCKTAIL SU27</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>105.000 VND</b>
                     </div>
                 </div>
 
-                <!-- Drink 10  -->
+                <!-- Drink 10 -->
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-10">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-10.1.jpg" alt="Cocktail men in black"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">COCKTAIL MEN IN BLACK</h2>
-                        <h6 data-i18n="typeOFfood" class="overlay"> Một Loại</h6>
-                        </h6>
+                        <h2 data-i18n="drinkMenu.cocktailMenInBlack">COCKTAIL MEN IN BLACK</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>115.000 VND</b>
                     </div>
-                </div>         
+                </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="menu-item" data-category="drink-10">
                     <div class="menu-img">
                         <img loading="lazy" src="images/drinkMenu/Drink-10.3.jpg" alt="Cocktail lady pink"
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">COCKTAIL LADY PINK</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.cocktailLadyPink">COCKTAIL LADY PINK</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>115.000 VND</b>
                     </div>
                 </div>
@@ -442,8 +418,8 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">COCKTAIL ICY CLOUD</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.cocktailIcyCloud">COCKTAIL ICY CLOUD</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>115.000 VND</b>
                     </div>
                 </div>
@@ -453,48 +429,33 @@
                             class="zoom-image">
                     </div>
                     <div class="menu-info">
-                        <h2 data-i18n="food">COCKTAIL WHITE VIET NAM</h2>
-                        <h6 data-i18n="typeOFfood-2" class="overlay">Một loại</h6>
+                        <h2 data-i18n="drinkMenu.cocktailWhiteVietNam">COCKTAIL WHITE VIET NAM</h2>
+                        <h6 data-i18n="drinkMenu.oneType" class="overlay">Một loại</h6>
                         <b>115.000 VND</b>
                     </div>
                 </div>
-                
+
             </div>
             <hr>
-
         </div>
     </main>
 
-    <!-- Scroll to top -->
-    <button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">
-        ⇧
-    </button>
-
-    <!-- Footer -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">⇧</button>
     <div id="footer"></div>
 
-    <!-- Bootstrap JavaScript Libraries -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
-
     <script src="js/main.js" defer></script>
     <script src="js/include.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.navMenuCustom');
-
-            // Check if the elements exist before adding the event listener
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function () {
                     navMenu.classList.toggle('active');
@@ -502,11 +463,11 @@
             }
         });
     </script>
+    <!-- AOS Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-<!-- AOS Animate On Scroll -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
 </html>

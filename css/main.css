@@ -76,9 +76,10 @@ body {
     height: auto;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
-width: 3rem !important;
-height: 3rem !important;
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 3rem !important;
+    height: 3rem !important;
 }
 
 /* Banner Content text */
@@ -542,11 +543,11 @@ html {
 }
 
 .image-modal img.modal-content {
-    max-width: 90%;
+    max-width: 70%;
     max-height: 90%;
     display: block;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
@@ -563,6 +564,29 @@ html {
 
 .close-btn:hover {
     color: var(--primary-color);
+}
+
+.image-modal .prev-btn,
+.image-modal .next-btn {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.image-modal .prev-btn {
+    left: 20px;
+}
+
+.image-modal .next-btn {
+    right: 20px;
 }
 
 /* ==== Responsive ==== */
@@ -764,6 +788,18 @@ html {
     .booking-form button {
         height: 45px;
         font-size: 16px;
+    }
+}
+
+/* Zoom img modal */
+@media (max-width: 480px) {
+    .image-modal img.modal-content {
+        max-width: 90%;
+    }
+
+    .image-modal .prev-btn,
+    .image-modal .next-btn {
+        font-size: 1rem;
     }
 }
 

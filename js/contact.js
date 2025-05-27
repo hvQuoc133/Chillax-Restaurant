@@ -57,3 +57,23 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
             }).showToast();
         });
 });
+
+/* Change lang placeholder contact*/
+function changeLang(lang) {
+    const input = document.getElementById("inputContact");
+    if (input) {
+        if (lang === 'vi') {
+            input.placeholder = "Ví dụ: Nêu ý kiến góp ý của bạn về nhà hàng, món ăn, dịch vụ...";
+        } else if (lang === 'en') {
+            input.placeholder = "E.g. Share your feedback about the restaurant, food, service...";
+        }
+    }
+}
+
+// Call changeLang when the page loads: 
+document.addEventListener('DOMContentLoaded', function() {
+    // Set default language from localStorage or use 'vi'
+    let lang = localStorage.getItem('lang') || 'vi';
+    changeLang(lang);
+});
+  
