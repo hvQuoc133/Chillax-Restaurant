@@ -182,7 +182,7 @@ let currentIndex = 0;
 function initGalleryModal() {
   galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
   galleryImages.forEach((img, idx) => {
-    img.onclick = function(e) {
+    img.onclick = function (e) {
       e.stopPropagation();
       openModalWithIndex(idx);
     }
