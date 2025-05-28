@@ -112,6 +112,12 @@
     margin-top: 50px;
 }
 
+.ft-author p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Responsive footer */
 @media (min-width: 1025px) {
     .footer-content {

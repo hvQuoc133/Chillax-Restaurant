@@ -117,11 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuLinks = document.querySelectorAll('.floating-list a');
 
   // Toggle menu + icon 
-  menuBtn.addEventListener('click', () => {
-    menuList.classList.toggle('active');
-    menuBtn.classList.toggle('rotate');
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const menuList = document.getElementById('menuList');
+    if (menuBtn && menuList) {
+      menuBtn.addEventListener('click', () => {
+        menuList.classList.toggle('active');
+        menuBtn.classList.toggle('rotate');
+      });
+    }
   });
-
   // Hide menu and reset toggle
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -166,14 +171,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', activateLink);
   activateLink();
-});
-
-//Hide floating button 
-window.addEventListener("scroll", function () {
-  const btn = document.querySelector('.floating-wrapper');
-  if (window.scrollY > 100) {
-    btn.classList.remove('hide');
-  } else {
-    btn.classList.add('hide');
-  }
 });

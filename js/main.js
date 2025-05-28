@@ -116,6 +116,10 @@ function initScrollToTopBtn() {
   });
 }
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 // --- Language Switcher ---
 function initLanguageSwitcher() {
   const savedLang = localStorage.getItem('language') || 'vi';
@@ -127,6 +131,10 @@ function initLanguageSwitcher() {
       loadLanguage(lang);
     });
   });
+}
+
+function changeLang(lang) {
+  loadLanguage(lang);
 }
 
 function loadLanguage(lang) {
@@ -145,17 +153,27 @@ function loadLanguage(lang) {
 
 // --- Set Active Nav Item ---
 function setActiveNavItem() {
-  const currentPage = window.location.pathname.split('/').pop(); // select current page
+  const currentPage = window.location.pathname.split('/').pop();
+
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage) {
+    const text = link.textContent.trim();
+
+    const isDrinkMenu = currentPage.startsWith("drinkMenu") && text.includes("NƯỚC UỐNG");
+
+    const isFoodMenu = currentPage.startsWith("food") && text.includes("MÓN ĂN");
+
+    if (
+      isDrinkMenu ||
+      isFoodMenu ||
+      (href === currentPage)
+    ) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
     }
   });
 }
-
 // --- Zoom Images Modal ---
 let galleryImages = [];
 let currentIndex = 0;

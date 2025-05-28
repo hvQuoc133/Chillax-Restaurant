@@ -7,7 +7,6 @@ function filterMenu(category) {
             item.style.display = 'none';
         }
     });
-    
     const menuContainer = document.querySelector('.menu-container');
     if (menuContainer) {
         menuContainer.scrollIntoView({ behavior: 'smooth' });
@@ -56,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             document.getElementById("header").innerHTML = data;
             afterLoad();
+            setActiveNavItem();
         });
 
     fetch("footer.html")
