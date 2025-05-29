@@ -96,15 +96,15 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 function changeLang(lang) {
   const input = document.getElementById("myInput");
   if (input) {
-      if (lang === 'vi') {
-        input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
-      } else if (lang === 'en') {
-        input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
-      }
+    if (lang === 'vi') {
+      input.placeholder = "Ví dụ: Yêu cầu chỗ ngồi ngoài trời, món ăn dị ứng, kiên cử...";
+    } else if (lang === 'en') {
+      input.placeholder = "E.g. Outdoor seating, food allergies, abstain...";
+    }
   }
 }
 // Call changeLang when the page loads: 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Set default language from localStorage or use 'vi'
   let lang = localStorage.getItem('language') || 'vi';
   changeLang(lang);
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuLinks = document.querySelectorAll('.floating-list a');
 
   // Toggle menu + icon 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const menuBtn = document.getElementById('menuBtn');
     const menuList = document.getElementById('menuList');
     if (menuBtn && menuList) {

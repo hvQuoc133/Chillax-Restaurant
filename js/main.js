@@ -133,9 +133,15 @@ function initLanguageSwitcher() {
   });
 }
 
-function changeLang(lang) {
-  loadLanguage(lang);
-}
+document.querySelectorAll('.lang-switcher img').forEach(img => {
+  img.addEventListener('click', () => {
+    const lang = img.getAttribute('alt') === 'Vietnamese' ? 'vi' : 'en';
+    loadLanguage(lang);
+    if (typeof window.changeLang === 'function') {
+      window.changeLang(lang);
+    }
+  });
+});
 
 function loadLanguage(lang) {
   fetch(`lang/${lang}.json`)

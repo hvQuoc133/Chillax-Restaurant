@@ -38,8 +38,8 @@ body {
 .parallax-content {
     height: 100%;
     display: flex;
-    align-items: center; /* căn giữa theo Y */
-    justify-content: center; /* căn giữa theo X */
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
