@@ -203,22 +203,25 @@
 
 @media (max-width: 991.98px) {
     .nav-item.dropdown>.dropdown-menu {
-        left: 10px !important;
         transform: none !important;
     }
 }
 
 @media (max-width: 480px) {
     .nav-item.dropdown>.dropdown-menu {
-        position: static !important;
-        left: 0 !important;
+        position: absolute !important;
+        left: 50% !important;
         width: 50vw !important;
         min-width: 0 !important;
         max-width: 50vw !important;
         border-radius: 12px;
         box-shadow: none;
         padding: 8px 0;
-        margin-left: -16px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        max-height: 40vh;
+        z-index: 1000;
+        transform: translateX(-50%) !important
     }
 
     .dropdown-submenu .dropdown-menu {
@@ -288,10 +291,7 @@
 
 @media (max-width: 768px) {
     .navbar-nav {
-        width: auto;
-        margin: 0 auto;
         display: flex;
-        gap: 10px;
+        gap: 20px;
     }
-    
 }
