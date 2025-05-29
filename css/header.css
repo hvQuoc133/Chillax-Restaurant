@@ -210,9 +210,10 @@
 @media (max-width: 480px) {
     .navbar-collapse {
         overflow-y: auto;
-        height: auto;
-        max-height: 100vh;
+        height: 85vh;
+        max-height: 85vh;
     }
+
     .nav-item.dropdown>.dropdown-menu {
         position: absolute !important;
         left: 50% !important;
