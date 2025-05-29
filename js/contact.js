@@ -73,7 +73,7 @@ function changeLang(lang) {
 // Call changeLang when the page loads: 
 document.addEventListener('DOMContentLoaded', function() {
     // Set default language from localStorage or use 'vi'
-    let lang = localStorage.getItem('lang') || 'vi';
+    let lang = localStorage.getItem('language') || 'vi';
     changeLang(lang);
 });
   

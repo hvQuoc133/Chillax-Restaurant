@@ -40,7 +40,7 @@
     width: auto;
     margin: 0 auto;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .navbar-nav .nav-item {
@@ -284,4 +284,14 @@
         width: 30px;
         height: 20px;
     }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        width: auto;
+        margin: 0 auto;
+        display: flex;
+        gap: 10px;
+    }
+    
 }
