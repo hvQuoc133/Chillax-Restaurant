@@ -208,6 +208,11 @@
 }
 
 @media (max-width: 480px) {
+    .navbar-collapse {
+        overflow-y: auto;
+        height: auto;
+        max-height: 100vh;
+    }
     .nav-item.dropdown>.dropdown-menu {
         position: absolute !important;
         left: 50% !important;
@@ -286,12 +291,5 @@
     .d-flex img {
         width: 30px;
         height: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        display: flex;
-        gap: 5px;
     }
 }
